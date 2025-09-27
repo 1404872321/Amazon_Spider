@@ -1,0 +1,700 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+@include-when-export url(https://fonts.googleapis.com/css?family=Lato:900,300&subset=latin-ext);
+
+:root {
+	--control-text-color: #777;
+}
+
+/**
+ * forked from pixyll.com
+ * MIT license
+ */
+
+h1,
+.h1,
+.f1 {
+	font-size: 2rem;
+	line-height: 2.5rem;
+}
+h2,
+.h2,
+.f2 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+h3,
+.h3,
+.f3 {
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+}
+p,
+.p,
+.f4,
+h4,
+h5,
+h6,
+dl,
+ol,
+ul,
+pre[cid],
+div[cid],
+#typora-source {
+	font-size: 1.125rem;
+	line-height: 1.5rem;
+}
+
+h4 {
+	font-size: 1.13rem;
+}
+/*
+ Pixyll
+ A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.
+ Best served with BASSCSS (http://jxnblk.github.io/basscss)
+ Crafted with <3 by John Otander (@4lpine) - ©2015 John Otander MIT License http://opensource.org/licenses/MIT
+
+*/
+
+body {
+	font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", "STSong", 'Segoe UI Emoji', Serif;
+	line-height: 1.5rem;
+	font-weight: 400;
+}
+
+#write {
+	max-width: 914px;
+	color: #333;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
+}
+
+@media only screen and (min-width: 1700px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+img {
+	width: auto;
+	max-width: 100%;
+}
+body {
+	font-size: 1.5rem;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.ty-table-edit {
+	background: #ededed;
+}
+
+table {
+	width: 100%;
+	font-size: 1.125rem;
+}
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td,
+table > tfoot > tr > th,
+table > tfoot > tr > td {
+	padding: 12px;
+	line-height: 1.2;
+	vertical-align: top;
+	border-top: 1px solid #333;
+}
+table > thead > tr > th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #333;
+}
+table > caption + thead > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > th,
+table > thead:first-child > tr:first-child > td {
+	border-top: 0;
+}
+table > tbody + tbody {
+	border-top: 2px solid #333;
+}
+p {
+	font-weight: 300;
+	line-height: 1.5;
+}
+abbr {
+	border-bottom: 1px black dotted;
+	cursor: help;
+}
+pre,
+code {
+	font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+code,
+.md-fences  {
+	color: #7a7a7a;
+}
+
+.md-fences {
+	padding: 1.125em;
+	margin-bottom: 0.88em;
+	font-size: 1rem;
+	border: 1px solid #7a7a7a;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+}
+
+blockquote {
+	padding: 1.33em;
+	font-style: italic;
+	border-left: 5px solid #7a7a7a;
+	color: #555;
+}
+blockquote em {
+	color: #000;
+}
+blockquote footer {
+	font-size: .85rem;
+	font-style: normal;
+	background-color: #fff;
+	color: #7a7a7a;
+	border-color: transparent;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 1em 0 0.5em;
+}
+@media screen and (min-width: 48em) {
+	.h1,
+	h1 {
+		font-size: 3.250rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.298rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.625rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.3rem;
+	}
+	#write>h4.md-focus:before,
+	#write>h5.md-focus:before,
+	#write>h6.md-focus:before{
+		top: 1px;
+	}
+	.p,
+	p,
+	li {
+		font-size: 1.25rem;
+		line-height: 1.8;
+	}
+	table {
+		font-size: 1.25rem;
+	}
+}
+@media (max-width: 48em) {
+	blockquote {
+		margin-left: 1rem;
+		margin-right: 0;
+		padding: 0.5em;
+	}
+	.h1,
+	h1 {
+		font-size: 2.827rem;
+	}
+	.h2,
+	h2 {
+		font-size: 1.999rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.413rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.3rem;
+	}
+}
+@media screen and (min-width: 64em) {
+	.h1,
+	h1 {
+		font-size: 4.498rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.29rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.9rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.591rem;
+	}
+	#write>h4.md-focus:before{
+		top:4px;
+	}
+}
+a {
+	color: #463F5C;
+	text-decoration: underline;
+}
+
+#write {
+	padding-top: 2rem;
+}
+
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+	white-space: pre;
+	border: 0px;
+
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+	width: 100vw;
+	max-width: calc(100% + 60px);
+
+	margin-left: -30px;
+	margin-bottom: 2em;
+	margin-top: -2010px;
+	padding-top: 2000px;
+	padding-bottom: 10px;
+	line-height: 1.5em;
+	color: #7a7a7a;
+	background-color: #fafafa;
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: 300;
+	clear: both;
+	padding-left: 0;
+	font-size:1.125rem;
+}
+.md-image>.md-meta {
+	color: #463F5C
+}
+.footnotes {
+	font-size:1.1rem;
+}
+.md-tag {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+}
+.code-tooltip {
+	background: white;
+}
+.code-tooltip-content {
+	font-size: 1.1rem;
+}
+
+.task-list{
+	padding-left: 0;
+}
+
+.md-task-list-item {
+	padding-left:34px;
+}
+
+.md-task-list-item > input{
+	width: 1.25rem;
+	height: 1.25rem;
+	display: block;
+	-webkit-appearance: initial;
+	top: -0.2rem;
+	margin-left: -1.6em;
+	margin-top: calc(1rem - 7px);
+	border: none;
+}
+
+.md-task-list-item > input:focus{
+	outline: none;
+	box-shadow: none;
+}
+
+.md-task-list-item > input:before{
+	border: 1px solid #555;
+	border-radius: 1.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: #fff;
+	content: ' ';
+	transition: background-color 200ms ease-in-out;
+	display: block;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	background: #333;
+	border-width: 2px;
+	display:inline-block;
+	transition: background-color 200ms ease-in-out;
+}
+
+.md-task-list-item > input:checked:after,
+.md-task-list-item > input[checked]:after {
+	opacity: 1;
+}
+
+.md-task-list-item > input:after {
+	opacity: 1;
+	-webkit-transition: opacity 0.05s ease-in-out;
+	-moz-transition: opacity 0.05s ease-in-out;
+	transition: opacity 0.05s ease-in-out;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	position: absolute;
+	top: 0.4375rem;
+	left: 0.28125rem;
+	width: 0.9375rem;
+	height: 0.5rem;
+	border: 3px solid #fff;
+	border-top: 0;
+	border-right: 0;
+	content: ' ';
+	opacity: 0;
+}
+
+.md-tag {
+	color:inherit;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+#typora-sidebar {
+	font-size:1rem !important;
+}
+
+.html-for-mac #typora-sidebar {
+	background-color:white;
+}
+
+.outline-content li, .outline-content ul {
+	font-size:1rem !important;
+}
+
+.outline-title {
+	line-height: inherit;
+	margin-top: 10px;
+}
+
+.outline-expander {
+	width: 18px;
+}
+
+.outline-expander:before {
+ 	content: "+";
+	font-family: inherit;
+	color: rgb(108, 108, 108); 
+  font-size: 1.5rem;
+ 	top: -0.1rem;
+}
+
+.outline-expander:hover:before {
+	content: "+";
+}
+
+.outline-item-open>.outline-item>.outline-expander:before{
+	content: "-";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.os-windows #typora-source {
+	font-family: inherit;
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.md-diagram-panel {
+	margin-top: 24px;
+	margin-left: -1.2em;
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -3.4em;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+li {
+	margin: 0.5rem 0;
+}
+
+li > *:last-child {
+	margin-bottom: 0;
+}
+
+
+</style><title>2301颜色选择</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=' first-line-indent'><h1 id='热风梳市场颜色筛选'><span>热风梳市场颜色筛选</span></h1><h2 id='筛选热风梳类目下的-90-140usd-的同类产品top3颜色分别为-粉-金-灰'><span>筛选热风梳类目下的 </span><strong><span>90-140USD</span></strong><span> 的同类产品，TOP3颜色分别为 &quot;粉-金-灰&quot;</span></h2><p><img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20250920160142858.png" referrerpolicy="no-referrer" alt="image-20250920160142858"></p><h2 id='yf-2301粉hb800金hb800黑--三色在美国各州销售分析'><span>YF-2301粉，HB800金，HB800黑--三色在美国各州销售分析</span></h2><p><strong><span>粉色</span></strong><span>         </span><img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20250918150431484.png" referrerpolicy="no-referrer" alt="image-20250918150431484"><strong></strong></p><p><strong><span>金色</span></strong><span>         </span><img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20250918151002361.png" referrerpolicy="no-referrer" alt="image-20250918151002361"><strong></strong></p><p>&nbsp;</p><p><strong><span>黑色</span></strong><span>        </span><img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20250918150530091.png" referrerpolicy="no-referrer" alt="image-20250918150530091"><strong></strong></p><figure class='table-figure'><table><thead><tr><th><span>地区</span></th><th><strong><span>粉色</span></strong><span> 销售分布</span></th><th><strong><span>金色</span></strong><span> 销售分布</span></th><th><strong><span>黑色</span></strong><span> 销售分布</span></th></tr></thead><tbody><tr><td><strong><span>佛罗里达州 (FL)-中</span></strong></td><td><strong><span>12.90%</span></strong></td><td><span>11.02%</span></td><td><span>10.34%</span></td></tr><tr><td><strong><span>德克萨斯州 (TX)</span></strong><span>-中上</span></td><td><strong><span>10.89%</span></strong></td><td><span>10.66%</span></td><td><span>10.34%</span></td></tr><tr><td><strong><span>加利福尼亚州 (CA)</span></strong><span>-富</span></td><td><span>9.59%</span></td><td><strong><span>13.64%</span></strong></td><td><span>10.07%</span></td></tr><tr><td><strong><span>纽约州 (NY)</span></strong><span>-富</span></td><td><strong><span>6.39%</span></strong></td><td><strong><span>5.42</span></strong><span>%</span></td><td><span>5.17%</span></td></tr><tr><td><strong><span>新泽西州 (NJ)-富</span></strong></td><td><span>3.91%</span></td><td><strong><span>4.25</span></strong><span>%</span></td><td><span>2.72%</span></td></tr><tr><td><span>北卡罗来纳州-穷</span></td><td><span>2.84%</span></td><td><span>3.07%</span></td><td><strong><span>3.40%</span></strong></td></tr><tr><td><span>俄亥俄州-穷</span></td><td><span>2.49%</span></td><td><span>2.44%</span></td><td><strong><span>3.27%</span></strong></td></tr><tr><td><span>伊利诺伊州-富</span></td><td><span>2.72%</span></td><td><strong><span>3.25%</span></strong></td><td><span>3.13%</span></td></tr><tr><td><span>宾夕法尼亚州-富</span></td><td><strong><span>3.79%</span></strong></td><td><span>3.11%</span></td><td><span>2.99%</span></td></tr><tr><td><span>田纳西州-穷</span></td><td><span>1.78%</span></td><td><span>1.63%</span></td><td><strong><span>2.86%</span></strong></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><h3 id='人口最多的州---top-11'><strong><span>人口最多的州 - TOP 11 </span></strong></h3><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>排名</span></th><th style='text-align:center;' ><span>州名</span></th><th style='text-align:center;' ><span>人口 (百万)</span></th><th style='text-align:center;' ><span>人均GDP (美元)</span></th><th style='text-align:center;' ><span>白人比例%</span></th><th style='text-align:center;' ><span>黑人比例%</span></th><th style='text-align:center;' ><span>非墨西班牙裔%</span></th><th style='text-align:center;' ><strong><span>纯墨西哥裔%</span></strong></th><th style='text-align:center;' ><span>亚裔%</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>1</span></td><td style='text-align:center;' ><strong><span>加利福尼亚州</span></strong></td><td style='text-align:center;' ><span>39.0</span></td><td style='text-align:center;' ><span>$85,546</span></td><td style='text-align:center;' ><span>36.5</span></td><td style='text-align:center;' ><span>5.4</span></td><td style='text-align:center;' ><span>7.9</span></td><td style='text-align:center;' ><strong><span>31.5</span></strong></td><td style='text-align:center;' ><span>15.1</span></td></tr><tr><td style='text-align:center;' ><span>2</span></td><td style='text-align:center;' ><strong><span>德克萨斯州</span></strong></td><td style='text-align:center;' ><span>30.0</span></td><td style='text-align:center;' ><span>$67,444</span></td><td style='text-align:center;' ><span>41.2</span></td><td style='text-align:center;' ><span>11.8</span></td><td style='text-align:center;' ><span>8.4</span></td><td style='text-align:center;' ><strong><span>31.3</span></strong></td><td style='text-align:center;' ><span>5.0</span></td></tr><tr><td style='text-align:center;' ><span>3</span></td><td style='text-align:center;' ><strong><span>佛罗里达州</span></strong></td><td style='text-align:center;' ><span>22.6</span></td><td style='text-align:center;' ><span>$59,227</span></td><td style='text-align:center;' ><span>53.4</span></td><td style='text-align:center;' ><span>15.4</span></td><td style='text-align:center;' ><span>21.9</span></td><td style='text-align:center;' ><strong><span>4.6</span></strong></td><td style='text-align:center;' ><span>3.0</span></td></tr><tr><td style='text-align:center;' ><span>4</span></td><td style='text-align:center;' ><strong><span>纽约州</span></strong></td><td style='text-align:center;' ><span>19.3</span></td><td style='text-align:center;' ><span>$92,341</span></td><td style='text-align:center;' ><span>55.3</span></td><td style='text-align:center;' ><span>13.7</span></td><td style='text-align:center;' ><span>17</span></td><td style='text-align:center;' ><strong><span>2.5</span></strong></td><td style='text-align:center;' ><span>9.0</span></td></tr><tr><td style='text-align:center;' ><span>5</span></td><td style='text-align:center;' ><span>宾夕法尼亚州</span></td><td style='text-align:center;' ><span>12.9</span></td><td style='text-align:center;' ><span>$65,167</span></td><td style='text-align:center;' ><span>75.7</span></td><td style='text-align:center;' ><span>10.5</span></td><td style='text-align:center;' ><span>4.9</span></td><td style='text-align:center;' ><strong><span>2.9</span></strong></td><td style='text-align:center;' ><span>3.9</span></td></tr><tr><td style='text-align:center;' ><span>6</span></td><td style='text-align:center;' ><span>伊利诺伊州</span></td><td style='text-align:center;' ><span>12.6</span></td><td style='text-align:center;' ><span>$79,574</span></td><td style='text-align:center;' ><span>60.8</span></td><td style='text-align:center;' ><span>13.9</span></td><td style='text-align:center;' ><span>4.6</span></td><td style='text-align:center;' ><strong><span>12.9</span></strong></td><td style='text-align:center;' ><span>5.8</span></td></tr><tr><td style='text-align:center;' ><span>7</span></td><td style='text-align:center;' ><span>俄亥俄州</span></td><td style='text-align:center;' ><span>11.8</span></td><td style='text-align:center;' ><span>$62,480</span></td><td style='text-align:center;' ><span>78.3</span></td><td style='text-align:center;' ><span>12.2</span></td><td style='text-align:center;' ><span>1.4</span></td><td style='text-align:center;' ><strong><span>2.5</span></strong></td><td style='text-align:center;' ><span>2.5</span></td></tr><tr><td style='text-align:center;' ><span>8</span></td><td style='text-align:center;' ><span>佐治亚州</span></td><td style='text-align:center;' ><span>10.9</span></td><td style='text-align:center;' ><span>$58,756</span></td><td style='text-align:center;' ><span>50.1</span></td><td style='text-align:center;' ><span>30.5</span></td><td style='text-align:center;' ><span>4.1</span></td><td style='text-align:center;' ><strong><span>5.8</span></strong></td><td style='text-align:center;' ><span>4.4</span></td></tr><tr><td style='text-align:center;' ><span>9</span></td><td style='text-align:center;' ><span>北卡罗来纳州</span></td><td style='text-align:center;' ><span>10.7</span></td><td style='text-align:center;' ><span>$58,208</span></td><td style='text-align:center;' ><span>62.8</span></td><td style='text-align:center;' ><span>20.2</span></td><td style='text-align:center;' ><span>3.6</span></td><td style='text-align:center;' ><strong><span>6.0</span></strong></td><td style='text-align:center;' ><span>3.3</span></td></tr><tr><td style='text-align:center;' ><span>10</span></td><td style='text-align:center;' ><span>密歇根州</span></td><td style='text-align:center;' ><span>10.0</span></td><td style='text-align:center;' ><span>$54,909</span></td><td style='text-align:center;' ><span>75.4</span></td><td style='text-align:center;' ><span>13.5</span></td><td style='text-align:center;' ><span>1.6</span></td><td style='text-align:center;' ><strong><span>3.7</span></strong></td><td style='text-align:center;' ><span>3.4</span></td></tr><tr><td style='text-align:center;' ><span>11</span></td><td style='text-align:center;' ><strong><span>新泽西州</span></strong></td><td style='text-align:center;' ><span>9.5</span></td><td style='text-align:center;' ><span>$76,335</span></td><td style='text-align:center;' ><span>54.6</span></td><td style='text-align:center;' ><span>12.8</span></td><td style='text-align:center;' ><span>19.7</span></td><td style='text-align:center;' ><strong><span>1.9</span></strong></td><td style='text-align:center;' ><span>10.2</span></td></tr></tbody></table></figure><h3 id='人均gdp排名前10州'><span>人均GDP排名前10州</span></h3><figure class='table-figure'><table><thead><tr><th><span>排名</span></th><th><span>州名</span></th><th><span>人均GDP (美元)</span></th><th><span>人口 (百万)</span></th><th><span>白人比例%</span></th><th><span>黑人比例%</span></th><th><strong><span>非墨西班牙裔%</span></strong></th><th><strong><span>纯墨西哥裔%</span></strong></th><th><span>亚裔%</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><strong><span>纽约州</span></strong></td><td><strong><span>$92,341</span></strong></td><td><span>19.3</span></td><td><span>55.3</span></td><td><span>13.7</span></td><td><strong><span>17.0</span></strong></td><td><strong><span>2.5</span></strong></td><td><span>9.0</span></td></tr><tr><td><span>2</span></td><td><span>马萨诸塞州</span></td><td><span>$89,645</span></td><td><span>7.0</span></td><td><span>68.6</span></td><td><span>6.5</span></td><td><strong><span>10.9</span></strong></td><td><strong><span>1.5</span></strong></td><td><span>7.2</span></td></tr><tr><td><span>3</span></td><td><span>华盛顿州</span></td><td><span>$87,234</span></td><td><span>7.8</span></td><td><span>67.5</span></td><td><span>3.8</span></td><td><strong><span>3.1</span></strong></td><td><strong><span>9.9</span></strong></td><td><span>9.9</span></td></tr><tr><td><span>4</span></td><td><strong><span>加利福尼亚州</span></strong></td><td><strong><span>$85,546</span></strong></td><td><span>39.0</span></td><td><span>36.5</span></td><td><span>5.4</span></td><td><strong><span>7.9</span></strong></td><td><strong><span>31.5</span></strong></td><td><span>15.1</span></td></tr><tr><td><span>5</span></td><td><span>康涅狄格州</span></td><td><span>$84,972</span></td><td><span>3.6</span></td><td><span>66.2</span></td><td><span>9.9</span></td><td><strong><span>14.8</span></strong></td><td><strong><span>2.5</span></strong></td><td><span>4.7</span></td></tr><tr><td><span>6</span></td><td><span>特拉华州</span></td><td><span>$84,426</span></td><td><span>1.0</span></td><td><span>61.7</span></td><td><span>21.4</span></td><td><strong><span>5.5</span></strong></td><td><strong><span>4.0</span></strong></td><td><span>4.1</span></td></tr><tr><td><span>7</span></td><td><span>北达科他州</span></td><td><span>$83,187</span></td><td><span>0.8</span></td><td><span>84.4</span></td><td><span>2.9</span></td><td><strong><span>1.6</span></strong></td><td><strong><span>2.5</span></strong></td><td><span>1.4</span></td></tr><tr><td><span>8</span></td><td><span>阿拉斯加州</span></td><td><span>$82,522</span></td><td><span>0.7</span></td><td><span>60.2</span></td><td><span>3.0</span></td><td><strong><span>3.5</span></strong></td><td><strong><span>3.8</span></strong></td><td><span>6.6</span></td></tr><tr><td><span>9</span></td><td><span>伊利诺伊州</span></td><td><span>$79,574</span></td><td><span>12.6</span></td><td><span>60.8</span></td><td><span>13.9</span></td><td><strong><span>4.6</span></strong></td><td><strong><span>12.9</span></strong></td><td><span>5.8</span></td></tr><tr><td><span>10</span></td><td><strong><span>新泽西州</span></strong></td><td><strong><span>$76,335</span></strong></td><td><span>9.5</span></td><td><span>54.6</span></td><td><span>12.8</span></td><td><strong><span>19.7</span></strong></td><td><strong><span>1.9</span></strong></td><td><span>10.2</span></td></tr></tbody></table></figure><h3 id='摘要分析'><strong><span>摘要分析</span></strong></h3><ol><li><p><strong><span>金色: 经济与潮流的“品牌大使”</span></strong><span>。其销售版图与</span><strong><span>高人均GDP</span></strong><span>和</span><strong><span>高亚裔人口</span></strong><span>的州（特别是加州）高度重合。代表了高端、品质和潮流，利润引擎和形象担当。</span></p></li><li><p><strong><span>粉色: 文化与情感的“区域冠军”</span></strong><span>。其销量</span><strong><span>高度集中</span></strong><span>在</span><strong><span>非墨西班牙裔人口占比较高且收入中等偏上</span></strong><span>的州（佛州、德州）。不是一个全国性产品，而是一个由文化认同驱动的区域性爆款。</span></p></li><li><p><strong><span>黑色: 人口与实用性的“市场基石”</span></strong><span>。其销售分布与</span><strong><span>各州总人口排名</span></strong><span>几乎完全一致，几乎不受特定文化或经济因素影响，是满足最广泛基础需求的“压舱石”。</span></p></li></ol><hr /><p>&nbsp;</p><h3 id='分颜色深度战略分析'><strong><span>分颜色深度战略分析</span></strong></h3><h4 id='金色款'><strong><span>金色款: </span></strong></h4><p><strong><span>核心现象</span></strong><span>: </span><strong><span>加州</span></strong><span>是金色的绝对核心市场。新泽西州（高收入、高亚裔比例）的销售份额也显著高于其在粉色和黑色中的份额。</span></p><p><strong><span>数据链接与分析</span></strong><span>:</span></p><ol><li><p><strong><span>经济驱动 (GDP)</span></strong><span>: 金色的销售重心明显偏向</span><strong><span>“高收入州”</span></strong><span>。</span></p><ul><li><p><strong><span>证据</span></strong><span>: 前五大市场中，加州、纽约州、新泽西州都位列全美人均GDP前十。消费者有更强的支付意愿和能力去购买外观更奢华、价值感更高的产品。金色完美满足了“为设计和品质付费”的高端消费心理。</span></p></li></ul></li><li><p><strong><span>族裔驱动 (Asian Population)</span></strong><span>: 金色的成功与亚裔人口分布</span><strong><span>强相关</span></strong><span>。</span></p><ul><li><p><strong><span>证据</span></strong><span>: </span><strong><span>加州</span></strong><span>是全美亚裔人口第一大州（588万，占州15.1%）。</span><strong><span>新泽西州</span></strong><span>的亚裔人口比例同样高达10.2%。</span></p></li></ul></li><li><p><strong><span>潮流引领</span></strong><span>: 作为全球时尚和科技中心，加州的消费选择往往定义了全国的潮流。</span></p></li></ol><p><strong><span>战略定位</span></strong><span>: 金色定位为</span><strong><span>高端旗舰款</span></strong><span> 。</span></p><ul><li><p><strong><span>目标客群</span></strong><span>: </span><strong><span>高收入人群、都市白领、以及亚裔美国人社群</span></strong><span>。</span></p></li></ul><p><img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20250918183029998.png" referrerpolicy="no-referrer" alt="image-20250918183029998"></p><h4 id='粉色款'><strong><span>粉色款</span></strong></h4><p><strong><span>核心现象</span></strong><span>: </span><strong><span>佛罗里达</span></strong><span>和 </span><strong><span>德克萨斯</span></strong><span> ：典型的由文化驱动的区域性市场。</span></p><p><strong><span>数据链接与分析</span></strong><span>:</span></p><ol><li><p><strong><span>族裔驱动</span></strong><span>: 粉色的版图就是一张</span><strong><span>“西班牙裔美国人核心分布图”</span></strong><span>。</span></p><ul><li><p><strong><span>证据</span></strong><span>: </span><strong><span>德州</span></strong><span> (39.7%) 和</span><strong><span>佛州</span></strong><span> (26.5%) 拥有全美最高之一的西班牙裔人口比例和绝对数量。拉丁文化崇尚家庭、热情、庆典和鲜明的色彩表达。粉色在这里不是一个简单的颜色，而是</span><strong><span>一种文化上的亲和力，一种情感上的共鸣</span></strong><span>。</span></p></li></ul></li><li><p><strong><span>经济差异</span></strong><span>: 与金色不同，粉色的核心市场——佛州和德州——属于</span><strong><span>“中等收入州”</span></strong><span>。</span></p><ul><li><p><strong><span>证据</span></strong><span>: 这表明粉色的购买者，其决策更多是受</span><strong><span>情感、个性和文化认同</span></strong><span>驱动，而非单纯追求“最昂贵”或“最高端”的标签。</span></p></li></ul></li><li><p><strong><span>人口活力</span></strong><span>: 这些州也是美国人口增长最快的地区，吸引了大量年轻人口。年轻人更乐于接受和展示潮流色彩。</span></p></li><li><p><strong><span>目标客群</span></strong><span>: 西班牙裔/拉丁裔消费者、年轻女性（18-35岁）、时尚爱好者。</span></p></li></ol><ul><li><p><strong><span>营销策略</span></strong><span>:</span></p><ul><li><p><strong><span>渠道预算</span></strong><span>: 将营销预算</span><strong><span>高度集中</span></strong><span>在佛州和德州。</span></p></li><li><p><strong><span>推广营销</span></strong><span>: 采用双语（英语/西班牙语）营销，博主选择拉丁裔博主。。</span></p></li><li><p><strong><span>合作发展</span></strong><span>: 可以和拉丁裔网红和社区领袖合作，建立品牌信任。</span></p></li></ul></li></ul><h4 id='黑色款'><strong><span>黑色款</span></strong></h4><p><strong><span>核心现象</span></strong><span>: 黑色的销售分布在三大市场州几乎</span><strong><span>完全均等</span></strong><span>。</span></p><p><strong><span>数据链接与分析</span></strong><span>:</span></p><ol><li><p><strong><span>人口驱动</span></strong><span>: 黑色的销售分布与任何特定的族裔或GDP数据都</span><strong><span>没有强关联</span></strong><span>。它只与一件事相关：</span><strong><span>州的总人口</span></strong><span>。</span></p><ul><li><p><strong><span>证据</span></strong><span>: 加州、德州、佛州是全美人口排名前三的州，它们也恰好是黑色销量的前三名，且份额相近。这证明黑色是一个</span><strong><span>普适性</span></strong><span>的产品，其销量是市场规模的直接反映。</span></p></li></ul></li><li><p><strong><span>消费心理</span></strong><span>: 黑色是</span><strong><span>理性的、功能性的</span></strong><span>选择。</span></p><ul><li><p><strong><span>证据</span></strong><span>: 这种均匀分布表明，消费者选择黑色并非出于文化或潮流冲动，而是基于“实用”、“经典”、“耐用”或“作为礼物不会出错”等理性考量。</span></p></li></ul></li></ol><p><strong><span>战略定位</span></strong><span>: 将黑色定位为</span><strong><span>经典基础款</span></strong><span>。</span></p><p>&nbsp;</p><h2></h2><h1 id='amazon算法推荐'><span>Amazon算法推荐</span></h1><p><span>COSMO算法下的热风梳全部颜色筛选排序：</span><img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20250918185109282.png" alt="image-20250918185109282"  /></p><p><span>COSMO算法下的热风梳&gt;80的全部颜色筛选排序</span><img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20250920144456780.png" referrerpolicy="no-referrer" alt="image-20250920144456780"></p><p><span>COSMO算法下华盛顿州的热风梳&gt;80的全部颜色筛选排序</span><img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20250920144933988.png" referrerpolicy="no-referrer" alt="image-20250920144933988"></p><h1 id='dyson-multi-func-styler'><span>Dyson Multi-func Styler</span></h1><h2 id='dyson-airwrap-co-anda2x™-2025新款'><span>Dyson Airwrap Co-anda2x™-2025新款</span></h2><p><strong><span>陶瓷粉-带些许玫瑰金质感</span></strong>
+<span>	</span><span>同时也发布了一款紫色的；</span></p><p><img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20250920162647033.png" referrerpolicy="no-referrer" alt="image-20250920162647033"></p><h2 id='dyson-airwrap-id™--id系列'><span>Dyson Airwrap i.d.™  id系列</span></h2><p><span>陶瓷粉-带些许玫瑰金质感</span></p><p><img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20250920162926763.png" referrerpolicy="no-referrer" alt="image-20250920162926763"></p><h2 id='dyson-airwrap™'><span>Dyson Airwrap™</span></h2><p><span>灰+赤铜金色</span></p><p><img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20250920163200211.png" referrerpolicy="no-referrer" alt="image-20250920163200211"></p><h1 id='shark-multi-func-styler'><span>Shark Multi-func Styler</span></h1><h2 id='shark-glam™-2025新款--2025年9月10日'><span>Shark Glam™-2025新款  2025年9月10日</span></h2><h3 id='glam-是-shark-冲击高端市场的旗舰产品-glam-是第一个从设计之初就为不同发质如直发波浪发和卷发提供-专属配件系统'><span>Glam 是 Shark 冲击高端市场的旗舰产品-Glam 是第一个从设计之初就为不同发质（如“直发/波浪发”和“卷发”）提供 专属配件系统</span></h3><p><img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20250920165033344.png" referrerpolicy="no-referrer" alt="image-20250920165033344"></p><h2 id='shark--flexfusion™-系列---2024'><span>Shark  FlexFusion™ 系列 - 2024 </span></h2><h3 id='核心是融合在纯气流技术的基础上创造性地加入了-恒温加热的陶瓷板'><span>核心是“融合”：在纯气流技术的基础上，创造性地加入了 恒温加热的陶瓷板。</span></h3><p><img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20250920165423690.png" referrerpolicy="no-referrer" alt="image-20250920165423690"></p><h2 id='shark-flexstyle-2022'><span>Shark FlexStyle-2022</span></h2><h3 id='核心是气流所有配件无论是自动卷发筒蓬松圆梳还是抚平梳都完全依赖于高速气流康达效应来完成造型'><span>核心是“气流”：所有配件，无论是自动卷发筒、蓬松圆梳还是抚平梳，都完全依赖于高速气流（康达效应）来完成造型。</span></h3><h3 id='主场景是湿发设计初衷是在吹干头发的同时完成造型从而减少传统热工具在干发上造成的高温损伤'><span>主场景是“湿发”：设计初衷是在吹干头发的同时完成造型，从而减少传统热工具在干发上造成的高温损伤。</span></h3><h3 id='一个功能强大的-吹风机-+-一套用风力来工作的-基础造型器'><span>一个功能强大的 </span><strong><span>吹风机</span></strong><span> + 一套用风力来工作的 </span><strong><span>基础造型器</span></strong><span>。</span></h3><p><span>香槟金/Stone色（低饱和度的奢华色感）-</span><strong><span>爆款</span></strong></p><p><img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20250920163435555.png" referrerpolicy="no-referrer" alt="image-20250920163435555"></p><p>&nbsp;</p></div></div>
+</body>
+</html>
